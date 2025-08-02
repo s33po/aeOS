@@ -5,28 +5,22 @@ set -ouex pipefail
 ### Install packages
 
 dnf5 install -y \
-   distrobox \
-   fuse \
    steam \
    steam-devices \
-   buildah \
    fastfetch \
    nvtop \
    btop \
-   just \
    neovim \
    zsh \
-   fzf \
-   tmux \
    python3-ramalama \
    jetbrains-mono-fonts-all \
    google-noto-sans-fonts \
    powerline-fonts \
 
 # VSCode
-dnf config-manager --add-repo "https://packages.microsoft.com/yumrepos/vscode"
-dnf config-manager --set-disabled packages.microsoft.com_yumrepos_vscode
-dnf -y --enablerepo packages.microsoft.com_yumrepos_vscode --nogpgcheck  install code
+dnf5 config-manager --add-repo "https://packages.microsoft.com/yumrepos/vscode"
+dnf5 config-manager --set-disabled packages.microsoft.com_yumrepos_vscode
+dnf5 -y --enablerepo packages.microsoft.com_yumrepos_vscode --nogpgcheck  install code
 
 # Use a COPR Example:
 #
