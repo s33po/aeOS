@@ -18,9 +18,9 @@ dnf5 install -y \
    powerline-fonts \
 
 # VSCode
-dnf5 config-manager --add-repo "https://packages.microsoft.com/yumrepos/vscode"
-dnf5 config-manager --set-disabled packages.microsoft.com_yumrepos_vscode
-dnf5 -y --enablerepo packages.microsoft.com_yumrepos_vscode --nogpgcheck  install code
+dnf config-manager add-repo --id=vscode --set=name=‘vscode’ --set=baseurl='https://packages.microsoft.com/yumrepos/vscode'
+dnf config-manager --set-disabled vscode
+dnf -y --enablerepo vscode --nogpgcheck  install code
 
 # Use a COPR Example:
 #
