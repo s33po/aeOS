@@ -4,13 +4,29 @@ set -ouex pipefail
 
 ### Install packages
 
-# Packages can be installed from any enabled yum repo on the image.
-# RPMfusion repos are available by default in ublue main images
-# List of rpmfusion packages can be found here:
-# https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
+dnf5 install -y \
+   distrobox \
+   fuse \
+   steam \
+   steam-devices \
+   buildah \
+   fastfetch \
+   nvtop \
+   btop \
+   just \
+   neovim \
+   zsh \
+   fzf \
+   tmux \
+   python3-ramalama \
+   jetbrains-mono-fonts-all \
+   google-noto-sans-fonts \
+   powerline-fonts \
 
-# this installs a package from fedora repos
-dnf5 install -y tmux 
+# VSCode
+dnf config-manager --add-repo "https://packages.microsoft.com/yumrepos/vscode"
+dnf config-manager --set-disabled packages.microsoft.com_yumrepos_vscode
+dnf -y --enablerepo packages.microsoft.com_yumrepos_vscode --nogpgcheck  install code
 
 # Use a COPR Example:
 #
