@@ -8,7 +8,6 @@ dnf5 install -y \
    steam \
    steam-devices \
    fastfetch \
-   nvtop \
    btop \
    neovim \
    zsh \
@@ -16,11 +15,6 @@ dnf5 install -y \
    jetbrains-mono-fonts-all \
    google-noto-sans-fonts \
    powerline-fonts \
-
-# VSCode
-dnf config-manager add-repo --id=vscode --set=name=‘vscode’ --set=baseurl='https://packages.microsoft.com/yumrepos/vscode'
-dnf config-manager --set-disabled vscode
-dnf -y --enablerepo vscode --nogpgcheck  install code
 
 # Use a COPR Example:
 #
